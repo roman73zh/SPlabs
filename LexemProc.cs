@@ -27,7 +27,7 @@ namespace Lab1
             ReadingInt = 1,
             ReadingIdentifier = 2,
             ReadingLiteral = 3,
-            Delimeter = 4,
+            Delimiter = 4,
             Error = 5,
             Finished = 6,
             
@@ -84,7 +84,7 @@ namespace Lab1
                         {
                             clearBuffers();
                             buffer += currentChar;
-                            state = ProcState.Delimeter;
+                            state = ProcState.Delimiter;
                         }
 
                     }
@@ -148,7 +148,7 @@ namespace Lab1
                             state = ProcState.Idle;
                         }
                     }
-                    else if (state == ProcState.Delimeter)
+                    else if (state == ProcState.Delimiter)
                     {
                         getNextChar();
                         int delimitersRes = Array.FindIndex(Consts.Constants.delimiters, l => l.Equals(buffer));
